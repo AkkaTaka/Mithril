@@ -95,7 +95,7 @@ TaskBuilder.Build(async () =>
 
 ---
 
-### 4. TimingWheel — O(1) 해시 타이머
+### 4. TimingWheel — O(1) 해시 타이머 (추후 추가 예정)
 
 `System.Threading.Timer`의 힙 기반 삽입 O(log N) 대신, **O(1) 해시 버킷 삽입**을 제공하는 고성능 타이머입니다.
 
@@ -156,6 +156,7 @@ graph BT
     subgraph Libraries
         Hosting["Mithril.Hosting<br/>MS.Extensions.Hosting 래퍼"]
         Network["Mithril.Network<br/>TCP / Pipelines / MPSC"]
+        Execution["Mithril.Execution<br/>ChainedTask / TimingWheel"]
         Concurrent["Mithril.Concurrent<br/>Promise / Future / Signal"]
         Memory["Mithril.Memory<br/>NativeMemoryPool (Chase-Lev)"]
         Logger["Mithril.Logger<br/>Serilog 구조화 로깅"]
@@ -168,6 +169,8 @@ graph BT
     App --> Network
     Network --> Memory
     Network --> Diagnostics
+    Execution --> Concurrent
+    Execution --> Diagnostics
     Hosting --> Logger
     App --> PostgresKit
 ```
@@ -176,16 +179,17 @@ graph BT
 
 ## 라이브러리 구성
 
-| 라이브러리              | 역할                    | 핵심 구현                                   |
-| ----------------------- | ----------------------- | ------------------------------------------- |
-| **Mithril.Network**     | TCP 소켓 레이어         | `Session`, `MpscByteBuffer`, `SocketSender` |
-| **Mithril.Concurrent**  | 비동기 동시성 기본 타입 | `Promise<T>`, `Future<T>`, `Signal`         |
-| **Mithril.Memory**      | 네이티브 메모리 풀      | `NativeMemoryPool` (Chase-Lev Deque)        |
-| **Mithril.Hosting**     | 서비스 수명 관리        | `Host<TConfigurator, TConfig>`              |
-| **Mithril.Logger**      | 구조화 로거             | `IAppLogger` (Serilog 기반)                 |
-| **Mithril.Diagnostics** | 장애 분석               | `CrashDumper` (Windows Minidump)            |
-| **Mithril.PostgresKit** | PostgreSQL 접근 레이어  | `PostgresClient`, `FlywayMigrator`          |
-| **Mithril.Utils**       | 공통 유틸리티           | 확장 메서드 모음                            |
+| 라이브러리              | 역할                    | 핵심 구현                                          |
+| ----------------------- | ----------------------- | -------------------------------------------------- |
+| **Mithril.Network**     | TCP 소켓 레이어         | `Session`, `MpscByteBuffer`, `SocketSender`        |
+| **Mithril.Execution**   | 실행 흐름 제어          | `ChainedTask`, `TimingWheel`, `SerializableObject` |
+| **Mithril.Concurrent**  | 비동기 동시성 기본 타입 | `Promise<T>`, `Future<T>`, `Signal`                |
+| **Mithril.Memory**      | 네이티브 메모리 풀      | `NativeMemoryPool` (Chase-Lev Deque)               |
+| **Mithril.Hosting**     | 서비스 수명 관리        | `Host<TConfigurator, TConfig>`                     |
+| **Mithril.Logger**      | 구조화 로거             | `IAppLogger` (Serilog 기반)                        |
+| **Mithril.Diagnostics** | 장애 분석               | `CrashDumper` (Windows Minidump)                   |
+| **Mithril.PostgresKit** | PostgreSQL 접근 레이어  | `PostgresClient`, `FlywayMigrator`                 |
+| **Mithril.Utils**       | 공통 유틸리티           | 확장 메서드 모음                                   |
 
 ---
 
@@ -289,6 +293,7 @@ public class EchoDispatcher : IPacketDispatcher
 /Libraries
   /Mithril.Network        # TCP 소켓 레이어
   /Mithril.Concurrent     # 비동기 동시성 기본 타입
+  /Mithril.Execution      # ChainedTask, TimingWheel
   /Mithril.Hosting        # 서비스 호스팅
   /Mithril.Logger         # 구조화 로거 (Serilog)
   /Mithril.Memory         # 네이티브 메모리 풀
