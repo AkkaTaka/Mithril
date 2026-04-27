@@ -347,9 +347,8 @@ public class EchoDispatcher : IPacketDispatcher
 
 ## Contact
 
-|           |                       |
-| --------- | --------------------- |
 | **Email** | kor.mithril@gmail.com |
+| --------- | --------------------- |
 
 ---
 
