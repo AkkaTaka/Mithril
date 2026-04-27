@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mithril.CodeGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../../../../Sample/Contents/Protocol/Proto ../../../../../../../Sample/Contents/Protocol/Generated"
+    }
+  }
+}

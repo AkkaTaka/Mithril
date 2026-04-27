@@ -1,0 +1,53 @@
+# Build results
+bin/
+obj/
+out/
+*.user
+*.suo
+results/
+Generated/
+.dotnet-home/
+
+# VS Code
+.vscode/
+
+# Rider / JetBrains
+.idea/
+
+# ASP.NET publish
+*.publish/
+
+# Build logs
+*.log
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS2019/2022 Generated
+GeneratedMSBuildEditorConfig.editorconfig
+.vs/
+*.dbmdl
+
+# Auto-generated cache
+*.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.targets
+*.nuget.g.props
+project.assets.json
+project.nuget.cache
+*.assets.cache
+*.dgspec.json
+*.targets
+*.props
+*.cache
+
+# Configuration
+appsettings.*.json
+
+# 기타
+TestResult/
+_ReSharper*/
+CombineCodes.ps1
+AllCode.txt

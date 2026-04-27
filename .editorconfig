@@ -1,0 +1,56 @@
+﻿root = true
+
+[*.cs]
+# 멤버 참조 시 this. 사용 강제
+dotnet_style_qualification_for_field = true:error
+dotnet_style_qualification_for_property = true:error
+dotnet_style_qualification_for_method = true:error
+dotnet_style_qualification_for_event = true:error
+
+# 파일 범위 네임스페이스 사용 (세미콜론 방식) 강제
+csharp_style_namespace_declarations = file_scoped:error
+
+# 모든 제어문(if/for/foreach/while 등)에 중괄호 필수
+csharp_prefer_braces = true:error
+
+# Using 지시문을 네임스페이스 선언 '외부(위쪽)'에 배치하도록 강제
+csharp_using_directive_placement = inside_namespace:error
+
+#### 일반 인스턴스 필드(멤버 변수) 명명 규칙 설정 ####
+# 1. 규칙 정의: 인스턴스 필드는 camelCase여야 함
+dotnet_naming_rule.instance_fields_should_be_camel_case.severity = error
+dotnet_naming_rule.instance_fields_should_be_camel_case.symbols = instance_fields_group
+dotnet_naming_rule.instance_fields_should_be_camel_case.style = camel_case_style
+
+# 2. 대상 기호 정의: static이 아닌 일반 필드
+dotnet_naming_symbols.instance_fields_group.applicable_kinds = field
+dotnet_naming_symbols.instance_fields_group.applicable_accessibilities = *
+# static을 제외한 모든 인스턴스 멤버를 대상으로 함
+dotnet_naming_symbols.instance_fields_group.required_modifiers = 
+
+# 3. 스타일 정의: camelCase (소문자로 시작, 언더바 없음)
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+dotnet_naming_style.camel_case_style.required_prefix =
+
+
+#### Static 필드(멤버 변수) 명명 규칙 설정 ####
+# 1. 규칙 정의: static 필드는 PascalCase여야 함
+dotnet_naming_rule.static_fields_should_be_pascal_case.severity = error
+dotnet_naming_rule.static_fields_should_be_pascal_case.symbols = static_fields_group
+dotnet_naming_rule.static_fields_should_be_pascal_case.style = pascal_case_style
+
+# 2. 대상 기호 정의: 'static' 키워드가 붙은 필드
+dotnet_naming_symbols.static_fields_group.applicable_kinds = field
+dotnet_naming_symbols.static_fields_group.applicable_accessibilities = *
+dotnet_naming_symbols.static_fields_group.required_modifiers = static
+
+# 3. 스타일 정의: PascalCase (대문자로 시작)
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+
+# 에러 수준
+dotnet_diagnostic.CS8618.severity = error
+
+[*.cs]
+end_of_line = crlf
+charset = utf-8-bom

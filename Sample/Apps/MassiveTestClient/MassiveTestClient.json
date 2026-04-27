@@ -1,0 +1,21 @@
+{
+  "Network": {
+    "NoDelay": true,
+    "MaxPacketSize": 65536,
+    "LingerResetOnClose": true
+  },
+  "Client": {
+    "ServerAddress": "127.0.0.1",
+    "ServerPort": 22222,
+    "TotalConnections": 10000,
+    "ConnectBatchSize": 100,
+    "ConnectIntervalMs": 10,
+    "Mode": "flood",
+    "RatePerSecond": 100,
+    "StatsIntervalSeconds": 1,
+    "DurationSeconds": 60,
+    "ConnectMaxRetries": 30,
+    "CloseFanoutParallelism": 0,
+    "ShutdownMode": "snapshotThenExit"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Logger": {
+    "FilePath": "./logs/MassiveTestServer_.log",
+    "MinimumLevel": "Verbose",
+    "RollingInterval": "Day",
+    "MaxBufferSize": 1024
+  },
+  "Network": {
+    "NoDelay": true,
+    "MaxPacketSize": 65536,
+    "MaxPendingSendBytes": 8388608
+  },
+  "Listener": {
+    "Port": 22222,
+    "Backlog": 65535,
+    "Pipeline": {
+      "PauseWriterThreshold": 131072,
+      "ResumeWriterThreshold": 65536
+    }
+  },
+  "StatsIntervalSeconds": 1
+}

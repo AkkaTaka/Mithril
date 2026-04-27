@@ -1,0 +1,21 @@
+{
+  "Logger": {
+    "FilePath": "./logs/EchoServer_.log",
+    "MinimumLevel": "Debug",
+    "RollingInterval": "Day",
+    "MaxBufferSize": 1024
+  },
+  "Network": {
+    "NoDelay": true,
+    "MaxPacketSize": 65536
+  },
+  "Listener": {
+    "Port": 22222,
+    "Backlog": 100,
+    "Pipeline": {
+      "PauseWriterThreshold": 65536,
+      "ResumeWriterThreshold": 32768,
+      "MaxPendingSendBytes": 4194304
+    }
+  }
+}

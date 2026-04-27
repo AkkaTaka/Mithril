@@ -1,0 +1,102 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="Release_Profile" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Benchmarks/">
+    <Project Path="Benchmarks/Mithril.Benchmarks/Mithril.Benchmarks.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Apps/">
+    <Project Path="Sample/Apps/EchoClient/EchoClient.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Sample/Apps/EchoServer/EchoServer.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Sample/Apps/MassiveTestClient/MassiveTestClient.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Sample/Apps/MassiveTestServer/MassiveTestServer.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/AppServices/">
+    <Project Path="Sample/AppServices/Echo/Echo.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Sample/AppServices/MassiveTest/MassiveTest.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Contents/">
+    <Project Path="Sample/Contents/Protocol/Protocol.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Database/">
+    <Project Path="Libraries/Mithril.PostgresKit/Source/Mithril.PostgresKit.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Infrastructures/">
+    <Project Path="Libraries/Mithril.Concurrent/Source/Mithril.Concurrent.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Diagnostics/Source/Mithril.Diagnostics.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Hosting/Source/Mithril.Hosting.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Logger/Source/Mithril.Logger.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Memory/Source/Mithril.Memory.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Network/Source/Mithril.Network.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Utils/Source/Mithril.Utils.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Libraries/Mithril.Concurrent/Test/Mithril.Concurrent.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Diagnostics/Test/Mithril.Diagnostics.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Hosting/Test/Mithril.Hosting.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Logger/Test/Mithril.Logger.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Memory/Test/Mithril.Memory.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Network/Test/Mithril.Network.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.PostgresKit/Test/Mithril.PostgresKit.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="Libraries/Mithril.Utils/Test/Mithril.Utils.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Tools/">
+    <Project Path="Tools/Mithril.CodeGenerator/Source/Mithril.CodeGenerator.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+</Solution>

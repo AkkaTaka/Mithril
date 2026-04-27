@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+		<Platforms>x64</Platforms>
+		<RootNamespace>Mithril.AppServices.Echo</RootNamespace>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<Configurations>Debug;Release;Release_Profile</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Mithril.Hosting\Source\Mithril.Hosting.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Mithril.Logger\Source\Mithril.Logger.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\Mithril.Network\Source\Mithril.Network.csproj" />
+    <ProjectReference Include="..\..\Contents\Protocol\Protocol.csproj" />
+  </ItemGroup>
+
+</Project>
